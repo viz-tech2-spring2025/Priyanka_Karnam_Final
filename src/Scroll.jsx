@@ -217,6 +217,41 @@ export const QuadrantChart = forwardRef(({ data, onBubbleClick, currentStep }, r
     if (bottomLabelRef.current) bottomLabelRef.current.style("display", showGrid ? "block" : "none");
     if (rightLabelRef.current) rightLabelRef.current.style("display", showGrid ? "block" : "none");
 
+    d3.select(svgRef.current).select(".contour-layer")?.remove();
+
+    // ✅ Add contours ONLY when Cartesian view
+    if (index === 1 || index === 2) {
+      const cartesianData = data.filter(d => {
+        if (index === 1) return d.source === "Reddit";
+        if (index === 2) return d.source === "Articles";
+        return false;
+      });
+  
+      const density = d3.contourDensity()
+        .x(d => toCartesianX(d))
+        .y(d => toCartesianY(d))
+        .size([widthBound, heightBound])
+        .bandwidth(20)
+        .thresholds(15);
+  
+      const contours = density(cartesianData);
+  
+      d3.select(svgRef.current)
+        .select("g")
+        .append("g")
+        .attr("class", "contour-layer")
+        .selectAll("path")
+        .data(contours)
+        .enter()
+        .append("path")
+        .attr("d", d3.geoPath())
+        .attr("fill", "none")
+        .attr("stroke", "#e85d04")
+        .attr("stroke-width", 0.8)
+        .attr("opacity", 0.6)
+        .style("pointer-events", "none") // ✅ disable mouse interactions
+       .lower(); // ✅ send to back;
+    }
     // ✅ Update bubbles
     circlesRef.current
       .interrupt()

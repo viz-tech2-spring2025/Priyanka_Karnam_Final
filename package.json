@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "d3": "^7.9.0",
+    "gsap": "^3.12.7",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-scroll": "^1.9.3",
+    "react-scrollama": "^2.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
