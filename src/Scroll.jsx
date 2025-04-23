@@ -214,7 +214,7 @@ export const QuadrantChart = forwardRef(({ data, onBubbleClick, currentStep }, r
       selectedBubbleRef.current = null;
     }
 
-    const showGrid = index === 15 || index === 16 || index === 17;
+    const showGrid = index === 17 || index === 18 || index === 19;
 
     xLineRef.current?.style("display", showGrid ? "block" : "none");
     yLineRef.current?.style("display", showGrid ? "block" : "none");
@@ -226,11 +226,11 @@ export const QuadrantChart = forwardRef(({ data, onBubbleClick, currentStep }, r
     d3.select(svgRef.current).select(".contour-layer").selectAll("*").remove(); // ✅ just clear paths
 
 
-    if (index >= 15 && index <= 17) {
+    if (index >= 17 && index <= 19) {
       const cartesianData = data.filter(d => {
-        if (index === 15) return true;
-        if (index === 16) return d.source === "Reddit";
-        if (index === 17) return d.source === "Articles";
+        if (index === 17) return true;
+        if (index === 18) return d.source === "Reddit";
+        if (index === 19) return d.source === "Articles";
         return false;
       }).filter(d => isFinite(toCartesianX(d)) && isFinite(toCartesianY(d)));
 
@@ -238,7 +238,7 @@ export const QuadrantChart = forwardRef(({ data, onBubbleClick, currentStep }, r
         .x(d => toCartesianX(d))
         .y(d => toCartesianY(d))
         .size([widthBound, heightBound])
-        .bandwidth(index === 15 ? 30 : 20)
+        .bandwidth(index === 17 ? 30 : 20)
         .thresholds(15);
 
       const contours = density(cartesianData);
@@ -266,15 +266,15 @@ export const QuadrantChart = forwardRef(({ data, onBubbleClick, currentStep }, r
       .transition()
       .duration(1000)
       .attr("opacity", d => {
-        if (index === 14 || index === 15) return 0.9;
-        if (index === 16) return d.source === "Reddit" ? 0.9 : 0;
-        if (index === 17) return d.source === "Articles" ? 0.9 : 0;
+        if (index === 16 || index === 17) return 0.9;
+        if (index === 18) return d.source === "Reddit" ? 0.9 : 0;
+        if (index === 19) return d.source === "Articles" ? 0.9 : 0;
         return 0;
       })
       .attr("cx", (d, i) =>
-        index === 14 ? (i % 13) * 40 : toCartesianX(d))
+        index === 16 ? (i % 13) * 40 : toCartesianX(d))
       .attr("cy", (d, i) =>
-        index === 14 ? Math.floor(i / 13) * 40 : toCartesianY(d));
+        index === 16 ? Math.floor(i / 13) * 40 : toCartesianY(d));
   }
 
   return (
@@ -289,7 +289,7 @@ function getColor(d) {
   if (source === "Reddit") return "#ff002b"; 
   if (source === "International") return "#a0001c";
   if (source === "Indian") return "#fcba04";
-  return "#faa307";
+  return "#fcba04";
 }
 
 function getTooltipContent(d) {

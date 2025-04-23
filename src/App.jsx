@@ -170,22 +170,26 @@ function App() {
         <div style={{ color: "#000", fontWeight: 600, fontSize: "16px" }}>{filtered.Quality}</div>
         <hr style={{ margin: "8px 0", borderColor: "#343a40" }} />
         
+    
+    <div>
+      <span style={{ color: "#c00021", fontWeight: "bold", fontSize: "16px"  }}>Fecal Coliform:</span>{" "}
+      <span style={{ fontWeight: 500 }}>{filtered.Fecal_Coliform}</span>
+    </div>
+    <hr style={{ margin: "8px 0", borderColor: "#343a40" }} />
+    
+    <div>
+      <span style={{ color: "#e86e50", fontWeight: "bold" , fontSize: "16px" }}>BOD:</span>{" "}
+      <span style={{ fontWeight: 500 }}>{filtered.BOD}</span>
+    </div>
+    <hr style={{ margin: "8px 0", borderColor: "#343a40" }} />
+        
         <div>
           <span style={{ color: "#e2a85d", fontWeight: "bold", fontSize: "16px"  }}>pH:</span>{" "}
           <span style={{ fontWeight: 500 }}>{filtered.pH}</span>
+
         </div>
-        <hr style={{ margin: "8px 0", borderColor: "#343a40" }} />
-    
-        <div>
-          <span style={{ color: "#e86e50", fontWeight: "bold" , fontSize: "16px" }}>BOD:</span>{" "}
-          <span style={{ fontWeight: 500 }}>{filtered.BOD}</span>
-        </div>
-        <hr style={{ margin: "8px 0", borderColor: "#343a40" }} />
-    
-        <div>
-          <span style={{ color: "#c00021", fontWeight: "bold", fontSize: "16px"  }}>Fecal Coliform:</span>{" "}
-          <span style={{ fontWeight: 500 }}>{filtered.Fecal_Coliform}</span>
-        </div>
+       
+       
       </div>
     );
     
@@ -281,16 +285,27 @@ function App() {
                 </div>
               )}
 
-              {scrollStep >= 9 && scrollStep <= 13 && (
-                <VerticalFlowChart data={kumbhData} currentStep={scrollStep - 9} />
+              {scrollStep === 9 && (
+                <div id="imagedivstyle">
+                  <img src="/wateratri.svg" alt="Narrative" className="imagestyle" />
+                </div>
+              )}
+
+              {scrollStep >= 10 && scrollStep <= 14 && (
+                <VerticalFlowChart data={kumbhData} currentStep={scrollStep - 10} />
                 
               )}
-              {scrollStep >= 9 && scrollStep <= 13 && (
-              <OverlayStats data={kumbhData} step={scrollStep - 9} />
+              {scrollStep >= 10 && scrollStep <= 14 && (
+              <OverlayStats data={kumbhData} step={scrollStep - 10} />
             )}
 
+              {scrollStep === 15 && (
+                <div id="imagedivstyle">
+                  <img src="/newsdata.jpg" alt="Narrative" className="imagestyle" />
+                </div>
+              )}
 
-              {scrollStep >= 14 && scrollStep <= 17 && (
+              {scrollStep >= 16 && scrollStep <= 19 && (
                 <QuadrantChart
                   ref={chartRef}
                   data={combinedData}
@@ -299,7 +314,7 @@ function App() {
                 />
               )}
 
-              {scrollStep === 18 && (
+              {scrollStep === 20 && (
                 <div id="imagedivstyle">
                   <img src="/Aghori_Water.jpg" alt="Narrative" className="imagestyle" />
                 </div>
@@ -324,7 +339,7 @@ function App() {
 
       {/* 📍 Add Scroll Indicator Dots */}
       <ScrollDots
-  steps={19}
+  steps={21}
   currentStep={scrollStep}
   onDotClick={handleDotClick}
   scrollStep={scrollStep}

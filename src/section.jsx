@@ -19,12 +19,12 @@ const Section = ({ onStepChange, selectedInfoMap, currentStep }) => {
 
   </div>,
 
-    `<p>Kumbh Mela is the largest religious gathering in the world, with <span class="highlighted"> approximately 400 million people </span> attending over a span of 45 days.<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>`,
+    `<p>Kumbh Mela is the largest religious gathering in the world, with <span class="highlighted"> approximately 400 million people </span> attending over a span of 45 days.<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>`,
 
     `<span class="sectiontitle">Where does this take place?</span> 
     <p> <br/>At the confluence of River Ganga, River Yamuna, and
     mythical Saraswati, at Sangam, Prayagraj,
-    which is located in India.<br/><br/><br/><br/></p>`,
+    which is located in India.<br/><br/><br/></p>`,
 
     `<span class="sectiontitle"> Holy Dip - Shahi Snan (Primary Ritual)</span> 
     <p> <br/>A sacred bath taken by saints and pilgrims in the confluence of rivers, believed to cleanse sins and purify the soul. It is the most auspicious act during Kumbh Mela.</p>`,
@@ -42,6 +42,8 @@ const Section = ({ onStepChange, selectedInfoMap, currentStep }) => {
     <p> <br/>Ashes of loved ones are immersed in the sacred waters, believed to free the soul from the cycle of rebirth and lead it toward liberation (moksha).</p>`,
 
     `“This grand religious gathering, while spiritually significant, has a profound environmental footprint that extends far beyond the festival grounds. The rituals, offerings, and mass congregation at the Kumbh Mela often contribute to river pollution, directly affecting not only the health and well-being of millions of pilgrims but also the delicate ecosystems that depend on these waters.”`,
+
+`<p> Water pollution is severe in the Ganges and Yamuna, India's most polluted rivers — and it spikes further during Kumbh Mela. The National Green Tribunal (NGT) reports elevated levels of <span style= "color: #c00021;" >Fecal Coliform</span>,<span style="color: #e86e50;" > Biochemical Oxygen Demand (BOD)</span> and irregular <span style= "color: #e2a85d;" >pH values</span> which are key indicators of water quality and determine whether water is safe for outdoor bathing.</p>`,
 
     `<span class="sectiontitle">Paush Poornima</span> 
     <p> <br/>Marks the beginning of the Kumbh Mela bathing period. Devotees take a holy dip on this full moon day, symbolizing spiritual renewal and the start of auspicious rituals.</br></br></br></p>`,
@@ -69,9 +71,12 @@ const Section = ({ onStepChange, selectedInfoMap, currentStep }) => {
      believe or perceive about the
      environmental consequences of such gatherings?
    </span>`,
+
+   `<p> </br>To explore public sentiment surrounding religious gatherings and environmental beliefs, data from Reddit and news outlets was collected and analyzed. </p>`,
+   
    
    `<span class="sectiontitle">Classification of sentiments</span>
-   <p> </br>To explore public sentiment surrounding religious gatherings and environmental beliefs, data from Reddit and news outlets was collected and analyzed. The content was classified based on 
+   <p> </br>The content was classified based on 
    whether it aligned with environmental concerns or religious beliefs, and further assessed for its alignment with government policies.</p>
    <p style="font-size: 11px; color: #932b23;" ></br>Click or hover the bubbles for more infromation</p>`,
 
@@ -125,35 +130,35 @@ const Section = ({ onStepChange, selectedInfoMap, currentStep }) => {
  {index === 0 && (
     <div className="right-scroll-arrow"><br/><br/><br/><br/>↓ Scroll</div>
   )}
-             {index === 9 && (
+             {index === 10 && (
               <img
                 src="/warli15.svg" // or use `src={warlike}` if imported
                 alt="Warlike visual"
                 id="imgstyle"
               />
             )}
-            {index === 10 && (
+            {index === 11 && (
               <img
                 src="/warli35.svg" // or use `src={warlike}` if imported
                 alt="Warlike visual"
                 id="imgstyle"
               />
             )}
-            {index === 11 && (
+            {index === 12 && (
               <img
                 src="/warli.svg" // or use `src={warlike}` if imported
                 alt="Warlike visual"
                 id="imgstyle"
               />
             )}
-               {index === 12 && (
+               {index === 13 && (
               <img
                 src="/warli23.svg" // or use `src={warlike}` if imported
                 alt="Warlike visual"
                 id="imgstyle"
               />
             )}
-            {index === 13 && (
+            {index === 14 && (
               <img
                 src="/warli20.svg" // or use `src={warlike}` if imported
                 alt="Warlike visual"
@@ -172,6 +177,14 @@ const Section = ({ onStepChange, selectedInfoMap, currentStep }) => {
             {index === 1 && (
               <img
                 src="/map_legend.svg" // or use `src={warlike}` if imported
+                
+                id="imgstyle"
+              />
+            )}
+
+{index >= 17 && index <= 19 && (
+              <img
+                src="/legend.svg" // or use `src={warlike}` if imported
                 
                 id="imgstyle"
               />

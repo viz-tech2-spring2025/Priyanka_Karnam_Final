@@ -61,6 +61,7 @@ p {
   scrollbar-width: none;         /* Firefox */
   -ms-overflow-style: none;   
   top: 0;
+
  
 }
 .tooltip {
@@ -77,4 +78,11 @@ p {
   z-index: 9999; /* ✅ High enough to show above everything */
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+.sticky-block {
+  position: sticky;
+  top: 20%;
+  background: #fff;
+  padding: 30px;
+
 }

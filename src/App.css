@@ -80,6 +80,8 @@
   padding: 10px 10px 10px 0px;
   border: 1px solid #ddd;
   box-sizing: border-box;
+  min-height: 80vh; /* ✅ Important for layout stability */
+
 }
 .step p {
   max-height: 100%;
