@@ -4,7 +4,7 @@
 }
 
 #graphic {
-  padding-top: 60px;
+  padding-top: 0px;
 }
 
 .x_axis path, .x_axis line{
@@ -32,7 +32,7 @@
   width: 250px;
   top: 0px;
   z-index: 90;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 }
 
 
@@ -43,6 +43,7 @@
   margin-bottom: 2px;
   color: #262626;
   line-height: 1.2em;
+  display: inline;
 }
 
 
@@ -50,7 +51,7 @@
 #vis {
   display: inline-block;
   position: fixed;
-  top: 60px;
+  
   z-index: 1;
   margin-left: 0;
   /* height: 600px; */
@@ -59,38 +60,44 @@
 }
 
 
-.app-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 0 auto;
-  max-width: 1200px;
-  padding-top: 40px;
+
+
+.left-visuals svg {
+  max-height: 100%;
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
-.left-visuals {
-  position: sticky;
-  top: 40px;
-  flex: 1;
-  height: 100vh;
-}
 
-.right-scroll {
-  flex: 1;
-  padding-left: 30px;
-}
 
 .step {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
   margin-bottom: 60vh;
-  padding: 20px;
-  background: #f5f5f5;
-  border-radius: 8px;
+  padding: 10px 10px 10px 0px;
   border: 1px solid #ddd;
+  box-sizing: border-box;
 }
+.step p {
+  max-height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.step * {
+  box-sizing: border-box;
+}
+
 
 .highlighted {
   color: #9d0208;
   font-weight: bold;
+  display: inline;
    /* You can adjust this */
 }
 
@@ -100,3 +107,136 @@
   font-weight: bold;
   font-size: 20px;
 }
+.sankey-scroll-wrapper {
+  height: 100%;
+  overflow-y: auto;
+  max-height: 90vh; /* or 100% if needed */
+  padding-right: 10px; /* optional for scrollbar */
+}
+.imgstyle
+{
+  margin-top: 10px;
+  max-Width: 100%;
+  height: auto;
+ 
+}
+
+#imagedivstyle {
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2;
+  pointer-events: none;
+  padding: 0;
+  margin: 0;
+}
+
+.imagestyle {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 0;
+  padding: 0;
+  display: block;
+}
+
+   .scroll-dots-container {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 1000;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: background-color 0.3s;
+  }
+  
+  .dot.active {
+    background-color: #9d0208;;
+  }
+  
+  
+  .scroll-dots-wrapper {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .scroll-dots-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+ 
+  
+  .dot.active {
+    background: #a00;
+  }
+  
+  .scroll-prompt {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #555;
+    animation: bounce 1.2s infinite;
+    text-align: center;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+  .scroll-content {
+    display: flex;
+    width: 100%;
+  }
+  .scroll-wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+  }
+  
+  .right-scroll-arrow {
+    position: absolute;
+    bottom: 60px; /* Increase to push it further down */
+    left: 50px;  /* Adjust horizontally */
+    font-size: 1.0rem;
+    color: #932b23;
+    animation: bounce 1.6s infinite;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .tooltip {
+    position: fixed; /* ✅ More reliable across scroll containers than absolute */
+    background: #222;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    max-width: 240px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    pointer-events: none;
+    z-index: 9999; /* ✅ High enough to show above everything */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }

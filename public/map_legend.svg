@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 792 612">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: #231f20;
+      }
+
+      .cls-3 {
+        font-family: HelveticaNeue, 'Helvetica Neue';
+        font-size: 21.05px;
+      }
+
+      .cls-4 {
+        font-family: HelveticaNeue-Bold, 'Helvetica Neue';
+        font-size: 28.07px;
+        font-weight: 700;
+      }
+
+      .cls-5 {
+        fill: #942c24;
+      }
+    </style>
+  </defs>
+  <circle class="cls-5" cx="579.83" cy="252.54" r="109.78"/>
+  <circle class="cls-5" cx="62.33" cy="315.46" r="46.86"/>
+  <circle class="cls-5" cx="293.09" cy="282.31" r="80.01"/>
+  <text class="cls-4" transform="translate(13.44 119.41)"><tspan x="0" y="0">LEGEND</tspan></text>
+  <text class="cls-3" transform="translate(13.44 433.26)"><tspan x="0" y="0">Number of people attending low to high</tspan></text>
+  <g>
+    <line class="cls-1" x1="402.53" y1="426.46" x2="540.48" y2="426.46"/>
+    <path class="cls-2" d="M540.08,426.46c-1.04-1.04-1.54-3.11-1.58-4.54,1.43,1.92,3.29,3.6,5.55,4.54-2.25.9-4.03,2.68-5.55,4.54.12-1.54.5-3.4,1.58-4.54Z"/>
+  </g>
+</svg>

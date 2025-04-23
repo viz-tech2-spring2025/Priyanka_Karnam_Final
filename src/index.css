@@ -1,26 +1,13 @@
 body {
-  font-family: Arial, sans-serif;
+  font-Family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
+ overflow-y: auto;
 }
 
 svg {
   background-color: #fff;
 }
-
-/* Tooltip Styles */
-.tooltip {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 8px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  pointer-events: none;
-  z-index: 999;
-  transition: opacity 0.3s ease-in-out;
-}
-
 
 
  .title {
@@ -33,4 +20,61 @@ p {
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
+}
+/* Ensure app-container stretches to page height */
+.app-container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 100px;
+  min-height: 100vh;   
+  position: relative;
+  z-index:1;      /* ✅ Ensure full height */
+}
+
+/* Left visuals stay sticky during scroll */
+.left-visuals {
+  position: sticky;
+  top: 0;
+  width: 50%;
+  max-width: 800px;
+  margin-right: 60px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  overflow: hidden;
+}
+
+/* Right scroll now uses document scroll */
+.right-scroll {
+  flex: 1;
+  padding-left: 0px;
+  max-width: 500px;
+  position: relative;
+  height: auto;
+  overflow: visible;
+  overflow-y: scroll; /* 👈 Allows text to scroll if it overflows */
+  position: sticky;
+  scrollbar-width: none;         /* Firefox */
+  -ms-overflow-style: none;   
+  top: 0;
+ 
+}
+.tooltip {
+  position: fixed; /* ✅ More reliable across scroll containers than absolute */
+  background: #222;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  max-width: 240px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  pointer-events: none;
+  z-index: 9999; /* ✅ High enough to show above everything */
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
