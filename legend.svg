@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750.15 110.44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a0001c;
+      }
+
+      .cls-2 {
+        font-family: HelveticaNeue, 'Helvetica Neue';
+        font-size: 18.26px;
+      }
+
+      .cls-3 {
+        fill: #ff002b;
+      }
+
+      .cls-4 {
+        fill: #fcba04;
+      }
+
+      .cls-5 {
+        letter-spacing: .02em;
+      }
+    </style>
+  </defs>
+  <circle class="cls-3" cx="22.26" cy="57.59" r="17.11"/>
+  <circle class="cls-1" cx="243.07" cy="57.59" r="17.11"/>
+  <circle class="cls-4" cx="531.59" cy="57.59" r="17.11"/>
+  <text class="cls-2" transform="translate(45.28 64.41)"><tspan x="0" y="0">Reddit comments</tspan></text>
+  <text class="cls-2" transform="translate(265.97 64.41)"><tspan x="0" y="0">Inte</tspan><tspan class="cls-5" x="30.44" y="0">r</tspan><tspan x="36.85" y="0">national News Outltes</tspan></text>
+  <text class="cls-2" transform="translate(555 64.41)"><tspan x="0" y="0">Indian News Outltes</tspan></text>
+</svg>
