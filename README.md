@@ -33,7 +33,9 @@ Articles.csv: Includes news articles sourced from both Indian and international 
 Kumbhdata.csv: Provides water quality measurements (Fecal Coliform, BOD, pH) recorded during key ritual bathing days at Kumbh Mela.
 Additional Notes: Sentiment predictions for both Reddit posts and news articles were generated using zero-shot classification. The dataset covers perspectives from both Indian and international sources.
 
-5) Credits
+5) Users: Policy makers, General public
+
+6) Credits
 
 Designed and Developed by Priyanka Karnam
 MFA Information Design and Data Visualization
