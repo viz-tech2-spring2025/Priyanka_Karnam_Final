@@ -21,7 +21,7 @@ p {
   line-height: 1.6;
   margin: 0;
 }
-/* Ensure app-container stretches to page height */
+
 .app-container {
   display: flex;
   align-items: flex-start;
@@ -31,10 +31,10 @@ p {
   gap: 100px;
   min-height: 100vh;   
   position: relative;
-  z-index:1;      /* ✅ Ensure full height */
+  z-index:1;  
 }
 
-/* Left visuals stay sticky during scroll */
+
 .left-visuals {
   position: sticky;
   top: 0;
@@ -48,7 +48,7 @@ p {
   overflow: hidden;
 }
 
-/* Right scroll now uses document scroll */
+
 .right-scroll {
   flex: 1;
   padding-left: 0px;
@@ -56,16 +56,16 @@ p {
   position: relative;
   height: auto;
   overflow: visible;
-  overflow-y: scroll; /* 👈 Allows text to scroll if it overflows */
+  overflow-y: scroll; 
   position: sticky;
-  scrollbar-width: none;         /* Firefox */
+  scrollbar-width: none;        
   -ms-overflow-style: none;   
   top: 0;
 
  
 }
 .tooltip {
-  position: fixed; /* ✅ More reliable across scroll containers than absolute */
+  position: fixed; 
   background: #222;
   color: white;
   padding: 10px 14px;
@@ -75,7 +75,7 @@ p {
   white-space: normal;
   overflow-wrap: break-word;
   pointer-events: none;
-  z-index: 9999; /* ✅ High enough to show above everything */
+  z-index: 9999;
   opacity: 0;
   transition: opacity 0.3s ease;
 }

@@ -17,7 +17,6 @@ const VerticalFlowChart = ({ data, currentStep }) => {
   const width = 700;
   const margin = { top: 100, right: 150, bottom: 100, left: 100 };
 
-  // Parse and prepare data once
   const parseDate = d3.timeParse("%d.%m.%Y");
   const parsedDates = targetDates.map(parseDate);
 
@@ -48,7 +47,7 @@ const VerticalFlowChart = ({ data, currentStep }) => {
       : d3.scaleLinear().domain([0, maxVal]).range([0, laneScale.bandwidth()]);
   });
 
-  // ✅ Initial Render
+ 
   useEffect(() => {
     const svg = d3.select(svgRef.current);
     svg.selectAll("*").remove();
@@ -60,7 +59,7 @@ const VerticalFlowChart = ({ data, currentStep }) => {
       .attr("class", "moveable-group")
       .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-    // Draw paths
+
     for (let i = 0; i < parsed.length - 1; i++) {
       const cur = parsed[i];
       const next = parsed[i + 1];
@@ -100,23 +99,9 @@ const VerticalFlowChart = ({ data, currentStep }) => {
       });
     }
 
-    // Add y-axis
-   // chartGroup.append("g")
-    //  .call(d3.axisLeft(y).tickFormat(d3.timeFormat("%b %d")));
-
-    // Legend
-   // categories.forEach((cat, i) => {
-    //  chartGroup.append("text")
-     //   .attr("x", width - margin.left - margin.right + 20)
-      //  .attr("y", 20 + i * 20)
-       // .attr("fill", colors(cat))
-        //.style("font-size", "13px")
-        //.text(cat);
-   // });
-
   }, [data]);
 
-  // ✅ Scroll Transition Logic Only
+
   useEffect(() => {
     const svg = d3.select(svgRef.current);
     const group = svg.select(".moveable-group");
@@ -152,7 +137,7 @@ const VerticalFlowChart = ({ data, currentStep }) => {
 
     <svg ref={svgRef}></svg>
 
-    {/* Fixed Date Line with inline text */}
+   
     <div
       style={{
         position: "absolute",
@@ -165,21 +150,21 @@ const VerticalFlowChart = ({ data, currentStep }) => {
          fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif"
       }}
     >
-      {/* Date Text */}
+  
       <div
         style={{
           paddingLeft: "5 px",
           fontSize: "20px",
           fontWeight: "bold",
-          color: "#111", // dark text
+          color: "#111", 
           whiteSpace: "nowrap",
-          marginRight: "10px" // spacing between text and line
+          marginRight: "10px"
         }}
       >
         {targetDates[currentStep]}
       </div>
 
-      {/* Line */}
+
       <div
         style={{
           width: "500px",

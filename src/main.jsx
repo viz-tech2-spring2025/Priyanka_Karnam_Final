@@ -1,13 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css"; // Optional, only if needed
+import "./index.css"; 
 import App from "./App.jsx";
 
-// Get the root element
+
 const rootElement = document.getElementById("root");
 
 
-// Check if the element exists before rendering
 if (rootElement) {
   createRoot(rootElement).render(
     <StrictMode>

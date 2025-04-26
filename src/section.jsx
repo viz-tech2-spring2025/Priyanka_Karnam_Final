@@ -132,35 +132,35 @@ const Section = ({ onStepChange, selectedInfoMap, currentStep }) => {
   )}
              {index === 10 && (
               <img
-                src="/warli15.svg" // or use `src={warlike}` if imported
+                src="/warli15.svg" 
                 alt="Warlike visual"
                 id="imgstyle"
               />
             )}
             {index === 11 && (
               <img
-                src="/warli35.svg" // or use `src={warlike}` if imported
+                src="/warli35.svg" 
                 alt="Warlike visual"
                 id="imgstyle"
               />
             )}
             {index === 12 && (
               <img
-                src="/warli.svg" // or use `src={warlike}` if imported
+                src="/warli.svg" 
                 alt="Warlike visual"
                 id="imgstyle"
               />
             )}
                {index === 13 && (
               <img
-                src="/warli23.svg" // or use `src={warlike}` if imported
+                src="/warli23.svg" 
                 alt="Warlike visual"
                 id="imgstyle"
               />
             )}
             {index === 14 && (
               <img
-                src="/warli20.svg" // or use `src={warlike}` if imported
+                src="/warli20.svg" 
                 alt="Warlike visual"
                 id="imgstyle"
               />
@@ -168,7 +168,7 @@ const Section = ({ onStepChange, selectedInfoMap, currentStep }) => {
 
             {index === 2 && (
               <img
-                src="/map.jpg" // or use `src={warlike}` if imported
+                src="/map.jpg"
                 
                 id="imgstyle"
               />
@@ -176,7 +176,7 @@ const Section = ({ onStepChange, selectedInfoMap, currentStep }) => {
 
             {index === 1 && (
               <img
-                src="/map_legend.svg" // or use `src={warlike}` if imported
+                src="/map_legend.svg" 
                 
                 id="imgstyle"
               />
@@ -184,7 +184,7 @@ const Section = ({ onStepChange, selectedInfoMap, currentStep }) => {
 
 {index >= 17 && index <= 19 && (
               <img
-                src="/legend.svg" // or use `src={warlike}` if imported
+                src="/legend.svg" 
                 
                 id="imgstyle"
               />
